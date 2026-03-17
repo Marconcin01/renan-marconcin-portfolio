@@ -95,8 +95,8 @@ export default function Hero() {
             <p className="text-muted-foreground mt-2">Apps em Desenvolvimento</p>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-primary">3+</div>
-            <p className="text-muted-foreground mt-2">Anos de Experiência</p>
+            <div className="text-4xl font-bold text-primary">1+</div>
+            <p className="text-muted-foreground mt-2">Anos de Estágio</p>
           </div>
         </div>
       </div>
