@@ -3,6 +3,7 @@ import { Calendar, Clock, Tag, ArrowLeft } from 'lucide-react';
 import { Link } from 'wouter';
 import { blogPosts } from '@/data/blogPosts';
 import ShareButtons from '@/components/ShareButtons';
+import CommentsSection from '@/components/CommentsSection';
 
 export default function BlogPost() {
   const [match, params] = useRoute('/blog/:id');
@@ -190,6 +191,9 @@ export default function BlogPost() {
           </div>
         )}
       </div>
+
+      {/* Comments Section */}
+      <CommentsSection postId={post.id} postTitle={post.title} />
     </div>
   );
 }
