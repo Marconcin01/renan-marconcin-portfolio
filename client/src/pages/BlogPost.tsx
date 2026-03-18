@@ -193,7 +193,11 @@ export default function BlogPost() {
       </div>
 
       {/* Comments Section */}
-      <CommentsSection postId={post.id} postTitle={post.title} />
+      <CommentsSection 
+        postId={post.id} 
+        postTitle={post.title}
+        authorEmail="renanmarconcin220@gmail.com"
+      />
     </div>
   );
 }

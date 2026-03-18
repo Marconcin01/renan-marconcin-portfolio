@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { MessageCircle, Send, Trash2 } from 'lucide-react';
 import { useComments, Comment } from '@/hooks/useComments';
+import CommentReplies from './CommentReplies';
 
 interface CommentsSectionProps {
   postId: string;
   postTitle: string;
+  authorEmail?: string;
 }
 
-export default function CommentsSection({ postId, postTitle }: CommentsSectionProps) {
-  const { comments, isLoading, addComment, removeComment, totalComments } = useComments(postId);
+export default function CommentsSection({ postId, postTitle, authorEmail }: CommentsSectionProps) {
+  const { comments, isLoading, addComment, addReply, removeComment, removeReply, totalComments } = useComments(postId, authorEmail);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -134,7 +136,7 @@ export default function CommentsSection({ postId, postTitle }: CommentsSectionPr
       </div>
 
       {/* Lista de Comentários */}
-      <div className="space-y-6">
+      <div className="space-y-8">
         {comments.length === 0 ? (
           <div className="text-center py-12 text-muted-foreground">
             <p>Nenhum comentário ainda. Seja o primeiro a comentar!</p>
@@ -159,7 +161,16 @@ export default function CommentsSection({ postId, postTitle }: CommentsSectionPr
                   <Trash2 size={18} />
                 </button>
               </div>
-              <p className="text-foreground whitespace-pre-wrap break-words">{comment.message}</p>
+              <p className="text-foreground whitespace-pre-wrap break-words mb-4">{comment.message}</p>
+
+              {/* Respostas */}
+              <CommentReplies
+                commentId={comment.id}
+                replies={comment.replies || []}
+                onAddReply={addReply}
+                onRemoveReply={removeReply}
+                authorEmail={authorEmail}
+              />
             </div>
           ))
         )}
