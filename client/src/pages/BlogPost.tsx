@@ -2,6 +2,7 @@ import { useRoute } from 'wouter';
 import { Calendar, Clock, Tag, ArrowLeft } from 'lucide-react';
 import { Link } from 'wouter';
 import { blogPosts } from '@/data/blogPosts';
+import ShareButtons from '@/components/ShareButtons';
 
 export default function BlogPost() {
   const [match, params] = useRoute('/blog/:id');
@@ -38,6 +39,8 @@ export default function BlogPost() {
   const relatedPosts = blogPosts
     .filter(p => p.id !== post.id && p.category === post.category)
     .slice(0, 3);
+
+  const postUrl = typeof window !== 'undefined' ? `${window.location.origin}/blog/${post.id}` : '';
 
   return (
     <div className="min-h-screen bg-background">
@@ -136,8 +139,17 @@ export default function BlogPost() {
           </div>
         </article>
 
-        {/* Tags */}
+        {/* Share Buttons */}
         <div className="mt-12 pt-8 border-t border-border">
+          <ShareButtons 
+            title={post.title}
+            url={postUrl}
+            excerpt={post.excerpt}
+          />
+        </div>
+
+        {/* Tags */}
+        <div className="mt-8 pt-8 border-t border-border">
           <h3 className="text-lg font-bold text-foreground mb-4">Tags</h3>
           <div className="flex flex-wrap gap-3">
             {post.tags.map((tag) => (
