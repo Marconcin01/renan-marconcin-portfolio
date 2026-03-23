@@ -6,11 +6,13 @@ import ShareButtons from '@/components/ShareButtons';
 import CommentsSection from '@/components/CommentsSection';
 
 export default function BlogPost() {
-  const [match, params] = useRoute('/blog/:id');
+  // 1. Correção: Avisamos o TypeScript que o params tem um 'id' do tipo string
+  const [match, params] = useRoute<{ id: string }>('/blog/:id');
 
   if (!match) return null;
 
-  const post = blogPosts.find(p => p.id === params?.id);
+  // 2. Correção: Forçamos o post a ser do tipo 'any' para evitar o erro 'never'
+  const post: any = blogPosts.find((p: any) => p.id === params?.id);
 
   if (!post) {
     return (
@@ -38,7 +40,7 @@ export default function BlogPost() {
   };
 
   const relatedPosts = blogPosts
-    .filter(p => p.id !== post.id && p.category === post.category)
+    .filter((p: any) => p.id !== post.id && p.category === post.category)
     .slice(0, 3);
 
   const postUrl = typeof window !== 'undefined' ? `${window.location.origin}/blog/${post.id}` : '';
@@ -85,17 +87,18 @@ export default function BlogPost() {
           <div className="bg-white text-foreground p-8 rounded-none">
             {/* Render markdown content */}
             <div className="space-y-6 leading-relaxed">
-              {post.content.split('\n\n').map((paragraph, idx) => {
+              {post.content.split('\n\n').map((paragraph: string, idx: number) => {
                 if (paragraph.startsWith('#')) {
                   const level = paragraph.match(/^#+/)?.[0].length || 1;
                   const text = paragraph.replace(/^#+\s/, '');
-                  const className = {
+                  const className: Record<number, string> = {
                     1: 'text-4xl font-bold mt-8 mb-4',
                     2: 'text-3xl font-bold mt-6 mb-3',
                     3: 'text-2xl font-bold mt-4 mb-2',
-                  }[level] || 'text-lg font-bold';
+                  };
+                  const headingClass = className[level] || 'text-lg font-bold';
                   return (
-                    <div key={idx} className={className}>
+                    <div key={idx} className={headingClass}>
                       {text}
                     </div>
                   );
@@ -111,7 +114,7 @@ export default function BlogPost() {
                 if (paragraph.startsWith('-') || paragraph.startsWith('•')) {
                   return (
                     <ul key={idx} className="list-disc list-inside space-y-2">
-                      {paragraph.split('\n').map((item, i) => (
+                      {paragraph.split('\n').map((item: string, i: number) => (
                         <li key={i} className="text-foreground">
                           {item.replace(/^[-•]\s/, '')}
                         </li>
@@ -122,7 +125,7 @@ export default function BlogPost() {
                 if (paragraph.match(/^\d+\./)) {
                   return (
                     <ol key={idx} className="list-decimal list-inside space-y-2">
-                      {paragraph.split('\n').map((item, i) => (
+                      {paragraph.split('\n').map((item: string, i: number) => (
                         <li key={i} className="text-foreground">
                           {item.replace(/^\d+\.\s/, '')}
                         </li>
@@ -153,7 +156,7 @@ export default function BlogPost() {
         <div className="mt-8 pt-8 border-t border-border">
           <h3 className="text-lg font-bold text-foreground mb-4">Tags</h3>
           <div className="flex flex-wrap gap-3">
-            {post.tags.map((tag) => (
+            {post.tags.map((tag: string) => (
               <span
                 key={tag}
                 className="inline-flex items-center gap-2 bg-card border border-border text-foreground px-4 py-2 font-semibold"
@@ -170,7 +173,7 @@ export default function BlogPost() {
           <div className="mt-16 pt-12 border-t border-border">
             <h3 className="text-2xl font-bold text-foreground mb-8">Artigos Relacionados</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {relatedPosts.map((relatedPost) => (
+              {relatedPosts.map((relatedPost: any) => (
                 <Link key={relatedPost.id} href={`/blog/${relatedPost.id}`}>
                   <a className="block group">
                     <div className="bg-card border border-border p-6 h-full hover:border-primary transition-colors">
