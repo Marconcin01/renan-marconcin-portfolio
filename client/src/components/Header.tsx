@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-<<<<<<< HEAD
-=======
 import { Link } from 'wouter';
->>>>>>> 513f6348cf4ef24bdeb8da40ddd7599735075fd5
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,14 +16,6 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 bg-white border-b border-border z-50">
       <div className="container max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-<<<<<<< HEAD
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-primary flex items-center justify-center text-white font-bold text-sm">
-            RM
-          </div>
-          <span className="font-bold text-lg text-foreground">Renan Marconcin</span>
-        </div>
-=======
         <Link href="/">
           <a className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <div className="w-8 h-8 bg-primary flex items-center justify-center text-white font-bold text-sm">
@@ -35,10 +24,9 @@ export default function Header() {
             <span className="font-bold text-lg text-foreground">Renan Marconcin</span>
           </a>
         </Link>
->>>>>>> 513f6348cf4ef24bdeb8da40ddd7599735075fd5
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-8">
+        <nav className="hidden md:flex items-center gap-8">
           <button
             onClick={() => scrollToSection('about')}
             className="text-foreground hover:text-primary transition-colors font-medium"
@@ -63,14 +51,11 @@ export default function Header() {
           >
             Skills
           </button>
-<<<<<<< HEAD
-=======
           <Link href="/blog">
             <a className="text-foreground hover:text-primary transition-colors font-medium">
               Blog
             </a>
           </Link>
->>>>>>> 513f6348cf4ef24bdeb8da40ddd7599735075fd5
           <button
             onClick={() => scrollToSection('contact')}
             className="text-foreground hover:text-primary transition-colors font-medium"
@@ -81,9 +66,8 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <button
+          className="md:hidden text-foreground"
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2"
-          aria-label="Toggle menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -91,8 +75,8 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <nav className="md:hidden border-t border-border bg-white">
-          <div className="container max-w-6xl mx-auto px-4 py-4 flex flex-col gap-4">
+        <nav className="md:hidden bg-white border-t border-border p-4 absolute top-full left-0 right-0 shadow-lg">
+          <div className="flex flex-col gap-4">
             <button
               onClick={() => scrollToSection('about')}
               className="text-foreground hover:text-primary transition-colors font-medium text-left"
@@ -117,14 +101,11 @@ export default function Header() {
             >
               Skills
             </button>
-<<<<<<< HEAD
-=======
             <Link href="/blog">
               <a className="text-foreground hover:text-primary transition-colors font-medium text-left">
                 Blog
               </a>
             </Link>
->>>>>>> 513f6348cf4ef24bdeb8da40ddd7599735075fd5
             <button
               onClick={() => scrollToSection('contact')}
               className="text-foreground hover:text-primary transition-colors font-medium text-left"
