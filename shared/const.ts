@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export { COOKIE_NAME, ONE_YEAR_MS } from "@shared/const";
 
 // Generate login URL at runtime so redirect URI reflects the current origin.
@@ -15,3 +16,7 @@ export const getLoginUrl = () => {
 
   return url.toString();
 };
+=======
+export const COOKIE_NAME = "app_session_id";
+export const ONE_YEAR_MS = 1000 * 60 * 60 * 24 * 365;
+>>>>>>> 513f6348cf4ef24bdeb8da40ddd7599735075fd5

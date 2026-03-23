@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 import { Github, Mail, Linkedin, MessageCircle } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const whatsappMessage = encodeURIComponent("Olá Renan! Vi seu portfólio de Automação & Dados e gostaria de conversar.");
   const whatsappUrl = `https://wa.me/5511940068958?text=${whatsappMessage}`;
+=======
+import { Github, Mail } from 'lucide-react';
+
+export default function Footer() {
+  const currentYear = new Date().getFullYear();
+>>>>>>> 513f6348cf4ef24bdeb8da40ddd7599735075fd5
 
   return (
     <footer className="bg-foreground text-background py-12">
@@ -27,6 +34,14 @@ export default function Footer() {
             <h4 className="font-bold mb-4">Links Rápidos</h4>
             <ul className="space-y-2 text-background/80">
               <li>
+<<<<<<< HEAD
+=======
+                <a href="#about" className="hover:text-primary transition-colors">
+                  Sobre
+                </a>
+              </li>
+              <li>
+>>>>>>> 513f6348cf4ef24bdeb8da40ddd7599735075fd5
                 <a href="#experience" className="hover:text-primary transition-colors">
                   Experiência
                 </a>
@@ -63,6 +78,7 @@ export default function Footer() {
                 <Github size={20} />
               </a>
               <a
+<<<<<<< HEAD
                 href="https://www.linkedin.com/in/renan-marconcin-almeida"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -72,12 +88,15 @@ export default function Footer() {
                 <Linkedin size={20} />
               </a>
               <a
+=======
+>>>>>>> 513f6348cf4ef24bdeb8da40ddd7599735075fd5
                 href="mailto:Renanmarconcin220@gmail.com"
                 className="p-3 bg-primary text-foreground hover:opacity-80 transition-opacity"
                 aria-label="Email"
               >
                 <Mail size={20} />
               </a>
+<<<<<<< HEAD
               <a
                 href={whatsappUrl}
                 target="_blank"
@@ -87,6 +106,8 @@ export default function Footer() {
               >
                 <MessageCircle size={20} />
               </a>
+=======
+>>>>>>> 513f6348cf4ef24bdeb8da40ddd7599735075fd5
             </div>
           </div>
         </div>

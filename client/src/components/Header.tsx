@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+<<<<<<< HEAD
+=======
+import { Link } from 'wouter';
+>>>>>>> 513f6348cf4ef24bdeb8da40ddd7599735075fd5
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,12 +19,23 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 bg-white border-b border-border z-50">
       <div className="container max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+<<<<<<< HEAD
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-primary flex items-center justify-center text-white font-bold text-sm">
             RM
           </div>
           <span className="font-bold text-lg text-foreground">Renan Marconcin</span>
         </div>
+=======
+        <Link href="/">
+          <a className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <div className="w-8 h-8 bg-primary flex items-center justify-center text-white font-bold text-sm">
+              RM
+            </div>
+            <span className="font-bold text-lg text-foreground">Renan Marconcin</span>
+          </a>
+        </Link>
+>>>>>>> 513f6348cf4ef24bdeb8da40ddd7599735075fd5
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-8">
@@ -48,6 +63,14 @@ export default function Header() {
           >
             Skills
           </button>
+<<<<<<< HEAD
+=======
+          <Link href="/blog">
+            <a className="text-foreground hover:text-primary transition-colors font-medium">
+              Blog
+            </a>
+          </Link>
+>>>>>>> 513f6348cf4ef24bdeb8da40ddd7599735075fd5
           <button
             onClick={() => scrollToSection('contact')}
             className="text-foreground hover:text-primary transition-colors font-medium"
@@ -94,6 +117,14 @@ export default function Header() {
             >
               Skills
             </button>
+<<<<<<< HEAD
+=======
+            <Link href="/blog">
+              <a className="text-foreground hover:text-primary transition-colors font-medium text-left">
+                Blog
+              </a>
+            </Link>
+>>>>>>> 513f6348cf4ef24bdeb8da40ddd7599735075fd5
             <button
               onClick={() => scrollToSection('contact')}
               className="text-foreground hover:text-primary transition-colors font-medium text-left"
