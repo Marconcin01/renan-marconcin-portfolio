@@ -1,5 +1,6 @@
 <<<<<<< HEAD
-import { ArrowRight, Github, Mail, FileText, MessageCircle, Linkedin } from 'lucide-react';
+// No arquivo client/src/components/Hero.tsx
+import { ArrowRight, Github, Mail, FileText, MessageCircle, Linkedin as LinkedinIcon } from 'lucide-react';
 
 export default function Hero() {
   const whatsappMessage = encodeURIComponent("Olá Renan! Vi seu portfólio de Automação & Dados e gostaria de conversar.");
