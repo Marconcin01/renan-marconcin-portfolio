@@ -1,16 +1,9 @@
-<<<<<<< HEAD
-// No arquivo client/src/components/Hero.tsx
-import { ArrowRight, Github, Mail, FileText, MessageCircle, Linkedin as LinkedinIcon } from 'lucide-react';
+import { ArrowRight, Github, Mail, FileText, MessageCircle, Linkedin } from 'lucide-react';
 
 export default function Hero() {
   const whatsappMessage = encodeURIComponent("Olá Renan! Vi seu portfólio de Automação & Dados e gostaria de conversar.");
   const whatsappUrl = `https://wa.me/5511940068958?text=${whatsappMessage}`;
 
-=======
-import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
-
-export default function Hero() {
->>>>>>> 513f6348cf4ef24bdeb8da40ddd7599735075fd5
   return (
     <section className="relative pt-24 pb-20 overflow-hidden">
       {/* Background Image */}
@@ -44,13 +37,8 @@ export default function Hero() {
               Sou apaixonado por criar automações que ganham tempo e produtividade. Com experiência em Python, Power BI e SQL, transformo dados em insights acionáveis.
             </p>
 
-<<<<<<< HEAD
             {/* CTA Buttons - Responsive Flexbox */}
             <div className="flex flex-wrap gap-4 pt-4">
-=======
-            {/* CTA Buttons */}
-            <div className="flex gap-4 pt-4">
->>>>>>> 513f6348cf4ef24bdeb8da40ddd7599735075fd5
               <a
                 href="#projects"
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 font-bold hover:opacity-90 transition-opacity"
@@ -64,7 +52,6 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 border-2 border-foreground text-foreground px-6 py-3 font-bold hover:bg-foreground hover:text-background transition-colors"
               >
-<<<<<<< HEAD
                 <Github size={20} />
                 GitHub
               </a>
@@ -78,7 +65,7 @@ export default function Hero() {
                 LinkedIn
               </a>
               <a
-                href="/curriculo.pdf"
+                href="/curriculo.pdf.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 download="Renan_Marconcin_Curriculo.pdf"
@@ -87,10 +74,6 @@ export default function Hero() {
                 <FileText size={20} />
                 Currículo (PDF)
               </a>
-=======
-                GitHub
-              </a>
->>>>>>> 513f6348cf4ef24bdeb8da40ddd7599735075fd5
             </div>
 
             {/* Social Links */}
@@ -105,7 +88,6 @@ export default function Hero() {
                 <Github size={20} />
               </a>
               <a
-<<<<<<< HEAD
                 href="https://www.linkedin.com/in/renan-marconcin-almeida"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -115,15 +97,12 @@ export default function Hero() {
                 <Linkedin size={20} />
               </a>
               <a
-=======
->>>>>>> 513f6348cf4ef24bdeb8da40ddd7599735075fd5
                 href="mailto:Renanmarconcin220@gmail.com"
                 className="p-3 border border-border hover:border-primary hover:text-primary transition-colors"
                 aria-label="Email"
               >
                 <Mail size={20} />
               </a>
-<<<<<<< HEAD
               <a
                 href={whatsappUrl}
                 target="_blank"
@@ -177,18 +156,6 @@ export default function Hero() {
                 opacity="0.5"
               />
             </svg>
-=======
-            </div>
-          </div>
-
-          {/* Right Visual */}
-          <div className="hidden md:flex justify-center">
-            <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663160843330/UAggvGh7NimvW7gyVYY59S/automation-visual-UTY48NJgJRdHWuSGq.webp"
-              alt="Automation workflow"
-              className="w-full max-w-md"
-            />
->>>>>>> 513f6348cf4ef24bdeb8da40ddd7599735075fd5
           </div>
         </div>
 
