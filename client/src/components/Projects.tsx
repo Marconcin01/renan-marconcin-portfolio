@@ -17,7 +17,8 @@ const projects: Project[] = [
     tags: ['Sistemas Web', 'Automação', 'PDF'],
     status: 'Completo',
     image: 'https://raw.githubusercontent.com/Marconcin01/renan-marconcin-portfolio/main/client/public/reformatec.png',
-    link: 'https://reformatec.vercel.app/', // <-- Link adicionado aqui!
+    link: 'https://reformatec.vercel.app/',
+    github: 'https://github.com/Marconcin01/Reformatec', // <-- Link do GitHub adicionado aqui!
   },
   {
     title: 'Automação Wrike-BI',
