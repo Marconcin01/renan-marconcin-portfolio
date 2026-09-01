@@ -7,7 +7,7 @@ interface Project {
   status: 'Completo' | 'Em Desenvolvimento';
   link?: string;
   github?: string;
-  image?: string; // Novo campo para a imagem do projeto
+  image?: string;
 }
 
 const projects: Project[] = [
@@ -16,7 +16,8 @@ const projects: Project[] = [
     description: 'Aplicação web para prestadores de serviços residenciais. Inclui geração de orçamento dinâmico em PDF, integração com WhatsApp e sincronização com Google Calendar.',
     tags: ['Sistemas Web', 'Automação', 'PDF'],
     status: 'Completo',
-    image: 'https://raw.githubusercontent.com/Marconcin01/renan-marconcin-portfolio/main/client/public/reformatec.png', // Exemplo de caminho da imagem
+    image: 'https://raw.githubusercontent.com/Marconcin01/renan-marconcin-portfolio/main/client/public/reformatec.png',
+    link: 'https://reformatec.vercel.app/', // <-- Link adicionado aqui!
   },
   {
     title: 'Automação Wrike-BI',
@@ -24,7 +25,7 @@ const projects: Project[] = [
     tags: ['Python', 'Playwright', 'ETL', 'Automação'],
     status: 'Completo',
     github: 'https://github.com/Marconcin01/automacao-wrike-bi',
-    image: '/images/wrike-bi.png', 
+    image: '/wrike-bi.png', 
   },
   {
     title: 'Pipeline Freshdesk-Outlook',
@@ -32,7 +33,7 @@ const projects: Project[] = [
     tags: ['Python', 'Playwright', 'Freshdesk', 'Outlook'],
     status: 'Completo',
     github: 'https://github.com/Marconcin01/automacao-freshdesk-outlook',
-    image: '/images/freshdesk.png',
+    image: '/freshdesk.png',
   },
   {
     title: 'Data Discovery SSAS',
@@ -40,21 +41,21 @@ const projects: Project[] = [
     tags: ['Python', 'SSAS', 'SQL', 'Data Discovery'],
     status: 'Completo',
     github: 'https://github.com/Marconcin01/Implementa-o-de-ferramentas-para-Data-Discovery-e-Mapeamento-de-SSAS',
-    image: '/images/data-discovery.png',
+    image: '/data-discovery.png',
   },
   {
     title: 'App de Estudos e Revisões',
     description: 'Aplicativo para gerenciar cursos, estudos e revisões. Foco em produtividade e organização do aprendizado com notificações e acompanhamento de progresso.',
     tags: ['React', 'TypeScript', 'Produtividade'],
     status: 'Em Desenvolvimento',
-    image: '/images/app-estudos.png',
+    image: '/app-estudos.png',
   },
   {
     title: 'App Bíblia com Quiz',
     description: 'Aplicativo interativo para leitura da Bíblia com sistema de quiz integrado e recompensas por progresso. Gamificação da leitura espiritual.',
     tags: ['React', 'Gamificação', 'Quiz'],
     status: 'Em Desenvolvimento',
-    image: '/images/app-biblia.png',
+    image: '/app-biblia.png',
   },
   {
     title: 'Análise de Gêneros de Filmes',
@@ -62,7 +63,7 @@ const projects: Project[] = [
     tags: ['Python', 'Pandas', 'Data Analysis', 'Jupyter'],
     status: 'Completo',
     github: 'https://github.com/Marconcin01/analise-generos-filmes',
-    image: '/images/analise-filmes.png',
+    image: '/analise-filmes.png',
   },
 ];
 
@@ -81,15 +82,20 @@ export default function Projects() {
               key={idx}
               className="bg-card border border-border hover:border-primary transition-colors group flex flex-col overflow-hidden"
             >
-              {/* Seção da Imagem */}
+              {/* Seção da Imagem - Agora clicável se houver um link */}
               {project.image && (
-                <div className="w-full h-56 overflow-hidden bg-muted border-b border-border">
+                <a 
+                  href={project.link || project.github || '#'} 
+                  target={(project.link || project.github) ? "_blank" : "_self"}
+                  rel="noopener noreferrer"
+                  className={`w-full h-56 overflow-hidden bg-muted border-b border-border block ${(project.link || project.github) ? 'cursor-pointer' : 'cursor-default'}`}
+                >
                   <img
                     src={project.image}
                     alt={`Preview do projeto ${project.title}`}
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
-                </div>
+                </a>
               )}
 
               {/* Seção de Conteúdo do Card */}
@@ -120,7 +126,7 @@ export default function Projects() {
                   ))}
                 </div>
 
-                {/* Footer do Card com os botões alinhados sempre na parte inferior */}
+                {/* Footer do Card */}
                 <div className="flex gap-3 pt-4 border-t border-border mt-auto">
                   {project.github && (
                     <a
