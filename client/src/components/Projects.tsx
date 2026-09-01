@@ -16,7 +16,7 @@ const projects: Project[] = [
     description: 'Aplicação web para prestadores de serviços residenciais. Inclui geração de orçamento dinâmico em PDF, integração com WhatsApp e sincronização com Google Calendar.',
     tags: ['Sistemas Web', 'Automação', 'PDF'],
     status: 'Completo',
-    image: 'https://raw.githubusercontent.com/Marconcin01/renan-marconcin-portfolio/main/client/public/reformatec.png',, // Exemplo de caminho da imagem
+    image: 'https://raw.githubusercontent.com/Marconcin01/renan-marconcin-portfolio/main/client/public/reformatec.png', // Exemplo de caminho da imagem
   },
   {
     title: 'Automação Wrike-BI',
