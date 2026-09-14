@@ -12,7 +12,7 @@ const experiences: ExperienceItem[] = [
   {
     title: 'Estagiário de BI e Dados',
     company: 'Olos Tecnologia',
-    period: 'Out 2025 - Presente',
+    period: 'Out 2025 - Agosto 2026',
     location: 'São Paulo, SP',
     highlights: [
       'Desenvolvimento de scripts em Python (Selenium, Openpyxl, OS) para automação de extração, limpeza e consolidação de dados',
