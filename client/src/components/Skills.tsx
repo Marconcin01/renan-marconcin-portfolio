@@ -10,22 +10,22 @@ const skillCategories: SkillCategory[] = [
   {
     name: 'Linguagens & Frameworks',
     icon: <Code size={24} />,
-    skills: ['Python', 'JavaScript', 'TypeScript', 'React', 'SQL'],
+    skills: ['Python', 'Java', 'Spring Boot', 'JavaScript', 'TypeScript', 'React', 'SQL'],
   },
   {
     name: 'BI & Dados',
     icon: <BarChart3 size={24} />,
-    skills: ['Power BI', 'Grafana', 'Power Query', 'Excel', 'SQL Server'],
+    skills: ['Power BI', 'Grafana', 'Power Query', 'Excel', 'SQL Server', 'PostgreSQL'],
   },
   {
     name: 'Automação & Ferramentas',
     icon: <Zap size={24} />,
-    skills: ['Selenium', 'Playwright', 'Openpyxl', 'Pandas', 'ETL'],
+    skills: ['Selenium', 'Playwright', 'Openpyxl', 'Pandas', 'ETL', 'Docker', 'JUnit'],
   },
   {
     name: 'Sistemas & Plataformas',
     icon: <Database size={24} />,
-    skills: ['SAP', 'Salesforce', 'GitHub', 'Teams', 'Outlook'],
+    skills: ['SAP', 'Salesforce', 'GitHub', 'GitHub Actions', 'Teams', 'Outlook'],
   },
 ];
 
