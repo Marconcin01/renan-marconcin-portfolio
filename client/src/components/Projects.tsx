@@ -21,14 +21,14 @@ const projects: Project[] = [
     github: 'https://github.com/Marconcin01/Reformatec', // <-- Link do GitHub adicionado aqui!
   },
   {
-  title: "Core Bancário Simplificado",
-  status: "Completo",
-  description: "API RESTful simulando operações bancárias críticas. Foco na consistência de dados e controle de concorrência utilizando @Transactional e lock pessimista no PostgreSQL.",
-  tags: ["Java", "Spring Boot", "PostgreSQL", "Docker"],
-  githubUrl: "https://github.com/Marconcin01/core-bancario-simplificado",
-  projectUrl: "", 
-  imageUrl: "/core-bancario-preview.png" // Lembre-se de salvar o print do Swagger com esse nome na pasta public/
-},
+    title: "Core Bancário Simplificado",
+    status: "Completo",
+    description: "API RESTful simulando operações bancárias críticas. Foco na consistência de dados e controle de concorrência utilizando @Transactional e lock pessimista no PostgreSQL.",
+    tags: ["Java", "Spring Boot", "PostgreSQL", "Docker"],
+    github: "https://github.com/Marconcin01/core-bancario-simplificado",
+    link: "", 
+    image: "/core-bancario-preview.png" 
+  },
   {
     title: 'Automação Wrike-BI',
     description: 'Pipeline de ETL desenvolvida em Python e Playwright para integração Wrike-BI. Extração automática de dados e processamento para dashboards.',
