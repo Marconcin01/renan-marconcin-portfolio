@@ -1,7 +1,7 @@
 import { ArrowRight, Github, Mail, FileText, MessageCircle, Linkedin } from 'lucide-react';
 
 export default function Hero() {
-  const whatsappMessage = encodeURIComponent("Olá Renan! Vi seu portfólio de Automação & Dados e gostaria de conversar.");
+  const whatsappMessage = encodeURIComponent("Olá Renan! Vi seu portfólio e gostaria de conversar sobre oportunidades.");
   const whatsappUrl = `https://wa.me/5511940068958?text=${whatsappMessage}`;
 
   return (
@@ -26,15 +26,15 @@ export default function Hero() {
                 Bem-vindo ao meu portfólio
               </p>
               <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
-                Automação & Dados
+                Backend & Dados
               </h1>
               <p className="text-xl text-muted-foreground">
-                Estudante de ADS | Estagiário de BI e Dados
+                Estudante de ADS | Assistente de Indicadores & Desenvolvedor
               </p>
             </div>
 
             <p className="text-lg text-foreground leading-relaxed max-w-lg">
-              Sou apaixonado por criar automações que ganham tempo e produtividade. Com experiência em Python, Power BI e SQL, transformo dados em insights acionáveis.
+              Apaixonado por criar arquiteturas robustas e automações eficientes. Com experiência em Java, Python, SQL e Power BI, transformo regras de negócio complexas em sistemas escaláveis e dados em decisões.
             </p>
 
             {/* CTA Buttons - Responsive Flexbox */}
@@ -171,12 +171,10 @@ export default function Hero() {
           </div>
           <div className="text-center">
             <div className="text-4xl font-bold text-primary">1+</div>
-            <p className="text-muted-foreground mt-2">Anos de Estágio</p>
+            <p className="text-muted-foreground mt-2">Anos de Experiência</p>
           </div>
         </div>
       </div>
     </section>
   );
 }
-
-
