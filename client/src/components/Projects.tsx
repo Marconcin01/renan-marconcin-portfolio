@@ -21,6 +21,15 @@ const projects: Project[] = [
     github: 'https://github.com/Marconcin01/Reformatec', // <-- Link do GitHub adicionado aqui!
   },
   {
+  title: "Core Bancário Simplificado",
+  status: "Completo",
+  description: "API RESTful simulando operações bancárias críticas. Foco na consistência de dados e controle de concorrência utilizando @Transactional e lock pessimista no PostgreSQL.",
+  tags: ["Java", "Spring Boot", "PostgreSQL", "Docker"],
+  githubUrl: "https://github.com/Marconcin01/core-bancario-simplificado",
+  projectUrl: "", 
+  imageUrl: "/core-bancario-preview.png" // Lembre-se de salvar o print do Swagger com esse nome na pasta public/
+},
+  {
     title: 'Automação Wrike-BI',
     description: 'Pipeline de ETL desenvolvida em Python e Playwright para integração Wrike-BI. Extração automática de dados e processamento para dashboards.',
     tags: ['Python', 'Playwright', 'ETL', 'Automação'],
@@ -57,14 +66,6 @@ const projects: Project[] = [
     tags: ['React', 'Gamificação', 'Quiz'],
     status: 'Em Desenvolvimento',
     image: '/app-biblia.png',
-  },
-  {
-    title: 'Análise de Gêneros de Filmes',
-    description: 'Análise exploratória da distribuição de gêneros de filmes usando o dataset MovieLens 25M. Visualizações e insights sobre tendências.',
-    tags: ['Python', 'Pandas', 'Data Analysis', 'Jupyter'],
-    status: 'Completo',
-    github: 'https://github.com/Marconcin01/analise-generos-filmes',
-    image: '/analise-filmes.png',
   },
 ];
 
